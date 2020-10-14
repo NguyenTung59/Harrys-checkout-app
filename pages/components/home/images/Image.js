@@ -2,21 +2,11 @@ import React from 'react';
 // import '../home.css';
 
 const Image = ({ record }) => {
-	// css hover instead of this
-	// const [hover, setHover] = useState(false);
-	// const handleOver = () => {
-	// 	setHover(true);
-	// };
-	// const handleOut = () => {
-	// 	setHover(false);
-	// };
 
 	return (
 		<div style={ImageStyles}>
 			<img
 				src={record.url}
-				// onMouseOver={handleOver}
-				// onMouseOut={handleOut}
 				style={image}
 				alt="product"
 			/>

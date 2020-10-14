@@ -1,19 +1,16 @@
 import { Row } from 'antd';
-// import 'antd/dist/antd.css';
-// import '../home.css';
 import React, { useState } from 'react';
-// import ListImage from '../../../data';
 import Image from './Image';
 
 const CardImage = () => {
-	const [images] = useState('');
+	const [images] = useState([{url: '', name:'', id: 1}]);
 	return (
 		<>
 			{images ? (
 				<Row className="list-product">
 					{images.map(record => (
 						<Image
-							key={record}
+							key={record.id}
 							record={record}
 							className="product-image"
 						></Image>
