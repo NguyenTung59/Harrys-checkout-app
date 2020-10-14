@@ -6,8 +6,12 @@ import RichText from "../formEdit/RichText";
 import Layout from "../components/Layout";
 import Upload from '../formEdit/Upload'
 import {Https} from '../../utils/port'
+import {useSelector, useDispatch} from 'react-redux'
+import {addImage} from '../../redux/actions/app'
 
 const EditProduct = ({ product }) => {
+  const urls = useSelector(state => state.products.imgUrl)
+  const dispatch = useDispatch()
   const [dataTime] = useState(new Date().toLocaleDateString("en-GB"));
   const [form, setForm] = useState({
     index: 1,
@@ -22,11 +26,19 @@ const EditProduct = ({ product }) => {
   const [errors, setErrors] = useState({});
   const router = useRouter();
 
+  useEffect(() => {
+    const getUrl = () => {
+      dispatch(addImage([...product.imgUrl]))
+    }
+    getUrl()
+  }, [])
+
   //useEffect
   useEffect(() => {
     if (isSubmitting) {
       if (Object.keys(errors).length === 0) {
         updateProduct();
+        // console.log(form);
         alert("Success");
       } else {
         setIsSubmitting(false);
@@ -55,6 +67,10 @@ const EditProduct = ({ product }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     let errs = validate();
+    setForm({
+      ...form,
+      imgUrl: [...urls]
+    })
     setErrors(errs);
     setIsSubmitting(true);
   };

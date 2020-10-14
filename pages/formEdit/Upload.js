@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Spin } from "antd";
+import {useSelector, useDispatch} from 'react-redux'
+import {updateImage} from '../../redux/actions/app'
 
-const Upload = ({ form }) => {
-  const [fileList, setFileList] = useState([]);
-  const [previewImage, setPreviewImage] = useState(form.imgUrl);
+const Upload = () => {
+  const dispatch = useDispatch()
+  const url = useSelector(state => state.products.imgUrl)
+  const [previewImage, setPreviewImage] = useState(url);
+ const [fileList, setFileList] = useState([]);
   const [loading, setLoading] = useState(false);
 
   const handleChange = async (e) => {
@@ -23,12 +27,13 @@ const Upload = ({ form }) => {
       const file = await res.json();
       fileList.push({ id: fileList.length + 1, url: file.secure_url });
     }
-    form.imgUrl.concat([...fileList]);
+    
+    dispatch(updateImage(fileList))
     viewImage();
   };
 
   const viewImage = () => {
-    setPreviewImage(fileList);
+    setPreviewImage([...fileList]);
     setLoading(false);
   };
 
@@ -40,7 +45,9 @@ const Upload = ({ form }) => {
       {loading ? (
         <Spin style={styleSpin} />
       ) : (
-        previewImage.map((item) => (
+        previewImage.length > 0 ? previewImage.map((item) => (
+          <img key={item.id} src={item.url} style={styleImage} />
+        )) : url.map((item) => (
           <img key={item.id} src={item.url} style={styleImage} />
         ))
       )}

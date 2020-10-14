@@ -1,6 +1,8 @@
 // APP
 export const GET_DATA = "GET_DATA";
 export const CHANGE_IMAGE = "CHANGE_IMAGE";
+export const ADD_IMAGE = "ADD_IMAGE";
+export const UPDATE_IMAGE = "UPDATE_IMAGE";
 
 // increment decrement Count
 export const INCREMENT_COUNT = "INCREMENT_COUNT";

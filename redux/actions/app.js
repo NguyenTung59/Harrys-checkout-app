@@ -41,3 +41,13 @@ export const changeImage = (url) => ({
   type: types.CHANGE_IMAGE,
   payload: url
 })
+
+export const addImage = (url) => ({
+  type: types.ADD_IMAGE,
+  payload: url
+})
+
+export const updateImage = (url) => ({
+  type: types.UPDATE_IMAGE,
+  payload: url
+})

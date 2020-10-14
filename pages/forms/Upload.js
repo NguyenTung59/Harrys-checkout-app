@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import { Spin } from "antd";
+import {useSelector, useDispatch} from 'react-redux'
+import {addImage} from '../../redux/actions/app'
 
-const Upload = ({ form }) => {
-  const [fileList, setFileList] = useState(form.imgUrl);
+const Upload = () => {
+  const dispatch = useDispatch()
+  const url = useSelector(state => state.products.imgUrl)
+  
+  const [fileList, setFileList] = useState([]);
   const [previewImage, setPreviewImage] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -23,7 +28,7 @@ const Upload = ({ form }) => {
       const file = await res.json();
       fileList.push({ id: fileList.length + 1, url: file.secure_url });
     }
-    form.imgUrl.concat([...fileList]);
+    dispatch(addImage([...fileList]))
     viewImage();
   };
 

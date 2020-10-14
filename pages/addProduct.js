@@ -12,6 +12,7 @@ import {Https} from '../utils/port'
 const AddProduct = ({data}) => {
   const dispatch = useDispatch();
   const router = useRouter();
+  const url = useSelector(state => state.products)
 
   const [dataTime] = useState(new Date().toLocaleDateString("en-GB"));
   const [form, setForm] = useState({
@@ -19,7 +20,7 @@ const AddProduct = ({data}) => {
     name: "",
     shortDescription: "",
     description: "",
-    imgUrl: [],
+    imgUrl: [...url.imgUrl],
     price: null,
     date: dataTime,
   });
@@ -31,6 +32,7 @@ const AddProduct = ({data}) => {
     if (isSubmitting) {
       if (Object.keys(errors).length === 0) {
         createProduct();
+        // console.log('form',form)
         alert("Success");
       } else {
         setIsSubmitting(false);
@@ -68,7 +70,7 @@ const AddProduct = ({data}) => {
   const handleChange = (e) => {
     setForm({
       ...form,
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value
     });
   };
 
