@@ -7,12 +7,9 @@ import { Button, Form, Input, Row, Col, Spin, Alert } from "antd";
 import { useRouter } from "next/router";
 import RichText from "./forms/RichText";
 import {addProduct} from './redux/actions/app'
-
-// const Https = "https://harrys-app-clone.vercel.app";
-const Https = "http://localhost:3000";
+import {Https} from '../utils/port'
 
 const AddProduct = ({data}) => {
-  // const products = useSelector(state => state.products.listProducts)
   const dispatch = useDispatch();
   const router = useRouter();
 

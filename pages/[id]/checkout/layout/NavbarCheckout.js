@@ -1,31 +1,39 @@
+import React, {useState, useEffect} from 'react'
 import Link from "next/link";
 import {
   RightOutlined
 } from "@ant-design/icons";
 import fetch from 'isomorphic-unfetch'
 
-const NavbarCheckout = ({product, productId}) => {
+const NavbarCheckout = () => {
+  const [currentProduct, setCurrentProduct] = useState({}); // carts
+
+  useEffect(() => {
+    const data = JSON.parse(localStorage.getItem("state"));
+    setCurrentProduct(data.carts.currentProduct);
+  }, [])
+
   return (
     <nav className="navbar-checkout">
-    <Link href={`/${productId}/checkout/cart/`}>
+    <Link href={`/${currentProduct._id}/checkout/cart/`}>
       <a className="navbar-brand">
         Cart
       </a>
     </Link>
-    <RightOutlined />
-    <Link href={`/${productId}/checkout/information/`}>
+    <RightOutlined className="arrow-right"/>
+    <Link href={`/${currentProduct._id}/checkout/contact_information/`}>
       <a className="navbar-brand">
         Information
       </a>
     </Link>
-    <RightOutlined />
-    <Link href={`/${productId}/checkout/shipping/`}>
+    <RightOutlined className="arrow-right"/>
+    <Link href={`/${currentProduct._id}/checkout/shipping_method/`}>
       <a className="navbar-brand">
         Shipping
       </a>
     </Link>
-    <RightOutlined />
-    <Link href={`/${productId}/checkout/payment/`}>
+    <RightOutlined className="arrow-right" />
+    <Link href={`/${currentProduct._id}/checkout/payment_method/`}>
       <a className="navbar-brand">
         Payment
       </a>
@@ -33,13 +41,6 @@ const NavbarCheckout = ({product, productId}) => {
     
   </nav>
   )
-}
-
-NavbarCheckout.getInitialProps = async ({query: {id}}) => {
-  const res = await fetch(`${Https}/api/products/${id}`);
-  const { data } = await res.json();
-  console.log(id)
-  return { product: data , productId: id};
 }
 
 export default NavbarCheckout

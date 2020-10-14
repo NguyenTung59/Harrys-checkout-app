@@ -7,9 +7,10 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   getData, changeImage
 } from "./redux/actions/app";
+import {Https} from '../utils/port'
 
 // const Https = "https://harrys-app-clone.vercel.app";
-const Https = "http://localhost:3000";
+// const Https = "http://localhost:3000";
 
 const Home = ({ Data }) => {
   // console.log(Data)
@@ -32,7 +33,7 @@ const Home = ({ Data }) => {
   const [currentProduct, setCurrentProduct] = useState(
     products.length > 0 ? products[products.length - 1] : products[0]
   );
-  // console.log(currentProduct)
+  
   //index of product in list products
   const [activeIndex, setActiveIndex] = useState(
     currentProduct.imgUrl.length > 0 ? currentProduct.imgUrl.length - 1 : 0

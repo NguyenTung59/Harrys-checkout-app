@@ -3,13 +3,9 @@ import React, { useState, useEffect } from "react";
 import fetch from "isomorphic-unfetch";
 import { Table, Button, Popconfirm } from "antd";
 import { useRouter } from "next/router";
-
-// const Https = "https://harrys-app-clone.vercel.app";
-const Https = "http://localhost:3000";
+import {Https} from '../../utils/port'
 
 const OrderTable = () => {
-  // console.log(orders)
-
   const [orders, setOrders] = useState([])
 
   useEffect( () => {

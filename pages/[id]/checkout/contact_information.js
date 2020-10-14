@@ -8,10 +8,7 @@ import fetch from "isomorphic-unfetch";
 import {useRouter} from 'next/router'
 import {useSelector, useDispatch} from 'react-redux'
 import { addContact } from '../../redux/actions/checkouts'
-
-// const Https = "https://harrys-app-clone.vercel.app";
-const Https = "http://localhost:3000";
-
+import {Https} from '../../../utils/port'
 
 const { Option } = Select;
 
@@ -148,7 +145,7 @@ const ContactInformation = ({ productId}) => {
 
                 {/* button continue */}
                 <Row style={formButtonStyles}>
-                  <Link href="/cart">
+                  <Link href={`/${productId}/checkout/cart`}>
                     <a className="navbar-brand">
                       <LeftOutlined />
                       Cart

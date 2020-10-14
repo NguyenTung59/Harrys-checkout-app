@@ -10,9 +10,7 @@ import {
 import {
   getCheckout
 } from '../redux/actions/checkouts'
-
-// const Https = "https://harrys-app-clone.vercel.app";
-const Https = "http://localhost:3000";
+import {Https} from '../../utils/port'
 
 const ViewProduct = ({ Data }) => {
   const dispatch = useDispatch();

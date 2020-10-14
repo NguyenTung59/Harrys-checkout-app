@@ -5,9 +5,7 @@ import { useRouter } from "next/router";
 import RichText from "../formEdit/RichText";
 import Layout from "../components/Layout";
 import Upload from '../formEdit/Upload'
-
-// const Https = "https://harrys-app-clone.vercel.app";
-const Https = "http://localhost:3000";
+import {Https} from '../../utils/port'
 
 const EditProduct = ({ product }) => {
   const [dataTime] = useState(new Date().toLocaleDateString("en-GB"));

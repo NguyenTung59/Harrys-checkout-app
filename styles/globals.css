@@ -258,3 +258,10 @@ a {
     top: -0.75em;
     z-index: 3;
 }
+
+/* arrow right */
+.arrow-right svg{
+  height: 12px;
+  width: 10px;
+  margin: 0 5px
+}

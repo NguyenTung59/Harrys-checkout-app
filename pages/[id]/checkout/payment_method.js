@@ -8,13 +8,12 @@ import fetch from "isomorphic-unfetch";
 import { useRouter } from "next/router";
 import { useSelector, useDispatch, shallowEqual } from "react-redux";
 import { addPayment } from "../../redux/actions/checkouts";
-
-// const Https = "https://harrys-app-clone.vercel.app";
-const Https = "http://localhost:3000";
+import {Https} from '../../../utils/port'
 
 const { Option } = Select;
 
-const PaymentMethod = () => {
+const PaymentMethod = ({productId}) => {
+  console.log(productId)
   const dispatch = useDispatch();
   const router = useRouter();
   const state = useSelector((state) => state);
@@ -154,12 +153,12 @@ const PaymentMethod = () => {
 
                 {/* button continue */}
                 <Row style={formButtonStyles}>
-                  <Link href="/#">
+                  <Link href={`/${productId}/checkout/shipping_method`}>
                     <a className="navbar-brand">
                       <LeftOutlined />
                       Return to shipping
                     </a>
-                  </Link>
+                    </Link>
                   <Button
                     type="primary"
                     style={buttonStyles}
@@ -202,7 +201,7 @@ PaymentMethod.getInitialProps = async ({ query: { id } }) => {
   const res = await fetch(`${Https}/api/products/${id}`);
   const { data } = await res.json();
 
-  return { product: data };
+  return { product: data, productId: id };
 };
 
 export default PaymentMethod;

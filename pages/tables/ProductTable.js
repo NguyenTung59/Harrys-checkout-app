@@ -3,19 +3,19 @@ import React, { useState, useEffect } from "react";
 import fetch from "isomorphic-unfetch";
 import { Table, Button, Popconfirm } from "antd";
 import { useRouter } from "next/router";
-
 //server
-// const Https = "https://harrys-app-clone.vercel.app";
-const Https = "http://localhost:3000";
+import {Https} from '../../utils/port'
 
 const UserTable = () => {
-  // console.log(products)
   const [products, setProducts] = useState([])
 
-  useEffect( async () => {
-    const res = await fetch(`${Https}/api/products`);
-    const data = await res.json()
-    setProducts(data.data)
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await fetch(`${Https}/api/products`);
+      const data = await res.json()
+      setProducts(data.data)
+    }
+    fetchData();
   }, [])
 
   const [isDeleting, setIsDeleting] = useState(false);

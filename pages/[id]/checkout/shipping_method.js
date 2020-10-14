@@ -10,9 +10,7 @@ import { useSelector, useDispatch, shallowEqual } from "react-redux";
 import {
   addShipping
 } from "../../redux/actions/checkouts";
-
-// const Https = "https://harrys-app-clone.vercel.app";
-const Https = "http://localhost:3000";
+import {Https} from '../../../utils/port'
 
 const { Option } = Select;
 
@@ -103,7 +101,7 @@ const ShippingMethod = ({ productId }) => {
 
                 {/* button continue */}
                 <Row style={formButtonStyles}>
-                  <Link href="/#">
+                  <Link href={`/${productId}/checkout/contact_information`}>
                     <a className="navbar-brand">
                       <LeftOutlined />
                       Return to information
