@@ -39,9 +39,10 @@ const Thumbnail = ({ imgUrl, index }) => {
 		height: '44px',
 		width: '44px',
 		border: '1px solid #bfbfbf',
+		
 		marginBottom: '10px'
 	};
-	const imageStyles = { width: '100%', height: '100%' };
+	const imageStyles = { width: '100%', height: '100%', cursor: 'pointer'};
 	const isHoveredStyles = { border: '1px solid #263645', ...imageStyles };
 	const noHoverStyles = { border: '0', ...imageStyles };
 	return (
