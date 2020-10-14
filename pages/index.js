@@ -13,7 +13,6 @@ import {Https} from '../utils/port'
 // const Https = "http://localhost:3000";
 
 const Home = ({ Data }) => {
-  // console.log(Data)
   const dispatch = useDispatch();
   // state data
   const state = useSelector(state => state.app)
@@ -21,9 +20,6 @@ const Home = ({ Data }) => {
   useEffect(() => {
     dispatch(getData(currentProduct))
     dispatch(changeImage(currentProduct.imgUrl[0].url))
-    return () => {
-      console.log('state products', state)
-    }
   }, [])
 
   // list products get api
@@ -32,11 +28,6 @@ const Home = ({ Data }) => {
   // current product
   const [currentProduct, setCurrentProduct] = useState(
     products.length > 0 ? products[products.length - 1] : products[0]
-  );
-  
-  //index of product in list products
-  const [activeIndex, setActiveIndex] = useState(
-    currentProduct.imgUrl.length > 0 ? currentProduct.imgUrl.length - 1 : 0
   );
 
   // close box cart
