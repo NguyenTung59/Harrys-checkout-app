@@ -1,0 +1,266 @@
+.box-cart {
+	position: absolute;
+	top: 75px;
+	right: 15px;
+	z-index: 10;
+	width: 330px;
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 7px 0px;
+	background-color: rgb(255, 255, 255);
+	text-transform: none;
+	letter-spacing: normal;
+	color: rgb(78, 78, 78);
+	opacity: 1;
+	visibility: visible;
+	padding: 25px 20px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: rgb(221, 221, 221);
+	border-image: initial;
+	border-radius: 5px;
+	transition: opacity 0.5s ease 0s;
+}
+
+.shipping {
+	display: flex;
+	margin-bottom: 5px;
+	color: rgb(38, 54, 69);
+}
+
+.shipping p {
+	font-size: 13px;
+	letter-spacing: 0.4px;
+	line-height: 20px;
+	text-transform: none;
+	font-weight: 300;
+	margin-bottom: 0;
+}
+
+.economy {
+	display: flex;
+	flex-direction: column;
+	-webkit-box-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	align-items: center;
+	min-width: 60px;
+}
+
+.economy p {
+	font-size: 13px;
+	letter-spacing: 0.4px;
+	line-height: 20px;
+	text-transform: none;
+	font-weight: 300;
+	margin-top: 5px;
+
+	margin-bottom: 0 !important;
+}
+
+.economy .circle {
+	height: 12px;
+	width: 12px;
+	display: flex;
+	-webkit-box-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	align-items: center;
+
+	border-radius: 100%;
+}
+
+.progress {
+	position: relative;
+	margin-top: 20px;
+	margin-bottom: 40px;
+}
+
+.progressbar {
+	position: absolute;
+	display: flex;
+	width: 100%;
+	max-width: 345px;
+	background-color: rgb(247, 247, 247);
+	height: 4px;
+	margin-top: 4px;
+	border-width: initial;
+	border-style: none;
+	border-color: initial;
+	border-image: initial;
+	border-radius: 4px;
+}
+
+.progress-circle {
+	position: absolute;
+	display: flex;
+	justify-content: space-around;
+	width: 100%;
+}
+
+.price-ship {
+	font-size: 13px;
+	letter-spacing: 0.4px;
+	line-height: 20px;
+	text-transform: none;
+	margin-right: 3px;
+	font-weight: 700;
+}
+
+
+
+/* unlock ship */
+.lock {
+	color: rgb(78, 78, 78);
+}
+
+.lock-circle {
+	background: rgb(221, 221, 221);
+}
+
+.unlock-circle {
+	background: rgb(0, 130, 91);
+}
+
+.unlock {
+	color: rgb(0, 130, 91);
+}
+
+.unlock-day {
+	display: flex;
+	flex-direction: column;
+}
+
+/* mini cart  */
+.mini-cart {
+	text-align: left;
+	font-size: 14px;
+	display: flex;
+	padding: 20px 0px;
+	border-bottom: 1px solid rgb(221, 221, 221);
+}
+
+.mini-image {
+	width: 100px;
+	height: 100px;
+	vertical-align: middle;
+	margin: 0px 15px 0px 0px;
+}
+
+.mini-image img {
+	width: 100px;
+	height: 100%;
+}
+
+.mini-info {
+	width: 150px;
+	margin: 0 10px 0 0;
+	color: #4e4e4e;
+	text-align: left;
+	font-size: 14px;
+	height: 100px;
+}
+
+.item-title {
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+.mini-info .info {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	height: 30px;
+	width: 100%;
+	display: flex;
+	align-items: flex-end;
+}
+
+.mini-info .info span {
+	width: 150px;
+}
+
+/* button remove  */
+.buttonRemove {
+	display: flex;
+	align-items: flex-start;
+}
+
+.btnRemove {
+	width: 16px;
+	height: 16px;
+	background-color: rgb(78, 78, 78);
+	cursor: pointer;
+	border-radius: 100%;
+	border: none;
+}
+
+.btnRemove::after,
+.btnRemove::before {
+	content: '';
+	display: block;
+	width: 10px;
+	height: 2px;
+	background-color: rgb(255, 255, 255);
+}
+
+.btnRemove::before {
+	transform: rotate(-45deg);
+	margin-top: -1px;
+	margin-left: -3px;
+}
+
+.btnRemove::after {
+	transform: rotate(45deg);
+	margin-top: -2px;
+	margin-left: -3px;
+}
+
+/* price  */
+.price {
+	-webkit-box-pack: justify;
+	justify-content: space-between;
+	display: flex;
+	color: rgb(38, 54, 69);
+	margin-top: 10px;
+}
+
+.subprice {
+	font-weight: 500;
+	font-size: 18px;
+	letter-spacing: 0.5px;
+	line-height: 24px;
+	text-transform: none;
+}
+
+/* check out  */
+.checkout-btn {
+	margin-top: 11px;
+}
+
+.checkout {
+	display: flex;
+	-webkit-box-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	justify-content: center;
+	cursor: pointer;
+	text-transform: uppercase;
+	background-color: rgb(2, 95, 156);
+	color: rgb(255, 255, 255) !important;
+	width: 100%;
+	font-weight: 700;
+	font-size: 16px;
+	letter-spacing: 2px;
+	line-height: 23px;
+	height: 47px;
+	border-radius: 4px;
+	transition: background-color 0.2s ease 0s;
+	padding: 0px 20px;
+}
+
+.checkout:hover {
+	background-color: rgb(1, 64, 106);
+}
+
+.ant-menu-item a::before {
+	content: none;
+}
