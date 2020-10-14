@@ -6,15 +6,11 @@ import {
   openCart, closeCart
 } from "../../../../redux/actions/app";
 
-const MenuCart = ({
-	currentProduct,
-	count,
-	removeProduct
-	,currentImage
-}) => {
+const MenuCart = () => {
 
 	const dispatch = useDispatch()
 	const isOpen = useSelector(state => state.carts.isOpen)
+	const count = useSelector(state => state.carts.count)
 
 	//handle open cart
 	const [isClick, setIsClick] = useState(isOpen)
@@ -34,12 +30,7 @@ const MenuCart = ({
 				) : null}
 			</div>
 			{isOpen ? (
-				<BoxCart
-					currentImage={currentImage}
-					currentProduct={currentProduct}
-					count={count}
-					removeProduct={removeProduct}
-				/>
+				<BoxCart/>
 			) : null}
 		</div>
 	);
