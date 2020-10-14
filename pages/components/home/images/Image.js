@@ -1,16 +1,14 @@
 import React from 'react';
-// import '../home.css';
 
-const Image = ({ record }) => {
+const Image = () => {
 
 	return (
 		<div style={ImageStyles}>
 			<img
-				src={record.url}
+				src=''
 				style={image}
 				alt="product"
 			/>
-			<div className="nameStyles">{record.name}</div>
 		</div>
 	);
 };
