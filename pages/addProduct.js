@@ -6,7 +6,7 @@ import Upload from "./forms/Upload"
 import { Button, Form, Input, Row, Col, Spin, Alert } from "antd";
 import { useRouter } from "next/router";
 import RichText from "./forms/RichText";
-import {addProduct} from './redux/actions/app'
+import {addProduct} from '../redux/actions/app'
 import {Https} from '../utils/port'
 
 const AddProduct = ({data}) => {

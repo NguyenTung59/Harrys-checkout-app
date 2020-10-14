@@ -1,7 +1,7 @@
 import React from 'react';
 // import '../index.css';
 import {useSelector, useDispatch} from 'react-redux';
-import {incrementCount} from '../../../redux/actions/app'
+import {incrementCount} from '../../../../redux/actions/app'
 
 const ButtonRemove = () => {
 	const dispatch = useDispatch();

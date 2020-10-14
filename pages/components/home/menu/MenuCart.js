@@ -4,7 +4,7 @@ import BoxCart from '../../cart/BoxCart';
 import { useSelector, useDispatch } from "react-redux";
 import {
   openCart, closeCart
-} from "../../../redux/actions/app";
+} from "../../../../redux/actions/app";
 
 const MenuCart = ({
 	currentProduct,

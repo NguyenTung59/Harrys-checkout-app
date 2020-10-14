@@ -9,7 +9,7 @@ import { useRouter } from "next/router";
 import { useSelector, useDispatch, shallowEqual } from "react-redux";
 import {
   addShipping
-} from "../../redux/actions/checkouts";
+} from "../../../redux/actions/checkouts";
 import {Https} from '../../../utils/port'
 
 const { Option } = Select;

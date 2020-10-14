@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch} from "react-redux";
-import { changeImage} from '../../../redux/actions/app'
+import { changeImage} from '../../../../redux/actions/app'
 
 const Thumbnail = ({ imgUrl, index }) => {
 	const dispatch = useDispatch();

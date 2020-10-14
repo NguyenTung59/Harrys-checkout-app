@@ -1,7 +1,7 @@
 import React from 'react';
 // import '../index.css';
 import {useSelector, useDispatch} from 'react-redux'
-import {addShipping} from '../../../redux/actions/checkouts'
+import {addShipping} from '../../../../redux/actions/checkouts'
 
 const Economy = () => {
 	const dispatch = useDispatch()

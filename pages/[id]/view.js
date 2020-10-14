@@ -6,10 +6,10 @@ import HarrysBody from "../components/harrys/index";
 import { useSelector, useDispatch } from "react-redux";
 import {
   getData, changeImage
-} from "../redux/actions/app";
+} from "../../redux/actions/app";
 import {
   getCheckout
-} from '../redux/actions/checkouts'
+} from '../../redux/actions/checkouts'
 import {Https} from '../../utils/port'
 
 const ViewProduct = ({ Data }) => {

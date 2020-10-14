@@ -7,7 +7,7 @@ import InfoProduct from "./InfoProduct";
 import fetch from "isomorphic-unfetch";
 import { useRouter } from "next/router";
 import { useSelector, useDispatch, shallowEqual } from "react-redux";
-import { addPayment } from "../../redux/actions/checkouts";
+import { addPayment } from "../../../redux/actions/checkouts";
 import {Https} from '../../../utils/port'
 
 const { Option } = Select;

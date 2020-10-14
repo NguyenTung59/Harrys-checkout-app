@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {useSelector, useDispatch} from 'react-redux';
-import {changeImage, addToCart, decrementCount} from '../../redux/actions/app'
+import {changeImage, addToCart, decrementCount} from '../../../redux/actions/app'
 
 const InfoProduct = () => {
   const dispatch = useDispatch()

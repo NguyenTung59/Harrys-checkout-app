@@ -5,7 +5,7 @@ import { Button, Row } from 'antd';
 import { useSelector, useDispatch } from "react-redux";
 import {
   openCart, decrementCount, addToCart
-} from "../../../redux/actions/app";
+} from "../../../../redux/actions/app";
 
 const AddToCart = () => {
 	const currentProduct = useSelector(state => state.app.currentProduct)

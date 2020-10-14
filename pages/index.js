@@ -6,7 +6,7 @@ import HarrysBody from "./components/harrys/index";
 import { useSelector, useDispatch } from "react-redux";
 import {
   getData, changeImage
-} from "./redux/actions/app";
+} from "../redux/actions/app";
 import {Https} from '../utils/port'
 
 // const Https = "https://harrys-app-clone.vercel.app";

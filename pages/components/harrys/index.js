@@ -6,7 +6,6 @@ import ThumbnailGrid from './thumbnail-gallery/thumbnail-grid';
 import HarrysContent from './content/HarrysContent';
 
 const HarrysGallery = () => {
-	// const [hovered, setHovered] = useState(false);
 
 	const renderThumbnail = () => { 
 		return <ActiveThumbnailWindow />;
