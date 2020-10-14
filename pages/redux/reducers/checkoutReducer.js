@@ -26,12 +26,6 @@ const CheckoutReducer = (state = initState, action ) => {
         shipping: action.payload
       }
       break;
-    // case types.ADD_SHIPING_ADDRESS:
-    //   return {
-    //     ...state,
-    //     shipping: action.payload
-    //   }
-    //   break;
     case types.ADD_PAYMENT:
       return {
         ...state,

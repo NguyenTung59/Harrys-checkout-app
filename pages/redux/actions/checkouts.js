@@ -12,12 +12,6 @@ export const addContact = (contact) => ({
   payload: contact
 })
 
-// add shipping method
-// export const addShippingAddress = (address) => ({
-//   type: types.ADD_SHIPING_ADDRESS,
-//   payload: address
-// })s
-
 export const addShipping = (ship) => ({
   type: types.ADD_SHIPING,
   payload: ship
